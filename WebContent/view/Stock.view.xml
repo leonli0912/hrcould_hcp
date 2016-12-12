@@ -1,0 +1,33 @@
+<mvc:View controllerName="ui5TileTrial.controller.Stock" xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<SplitApp id="SplitStock" initialDetail="stockDetail"
+		initialMaster="stockMaster" orientationChange="onOrientationChange">
+		<masterPages>
+			<Page id="stockMaster" title="Employees" icon="sap-icon://action"
+				showNavButton="true" navButtonPress="onPressHome" class="sapUiStdPage">
+				<headerContent>
+				<Button icon="sap-icon://add" press="onPressAdd">
+				</Button>
+				</headerContent>
+				<content>
+					<List id="id_stockList" items="{/}">
+						<StandardListItem 
+						title="{Customer_id}" 
+						description="{Customer_name}"
+						type="Navigation" 
+						icon="{ProductPicUrl}" 
+						iconDensityAware="false"
+						iconInset="false" 
+						press="onPressToDetail" />
+					</List>
+				</content>
+
+			</Page>
+		</masterPages>
+		<detailPages>
+			<Page id="stockDetail" title="Employee Detail" class="sapUiStdPage">
+				
+			</Page>
+		</detailPages>
+	</SplitApp>
+</mvc:View>

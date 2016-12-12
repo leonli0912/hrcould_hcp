@@ -1,0 +1,12 @@
+{
+    "d": {
+        "results": [
+            {
+                "Customer_id": "001", 
+                "Customer_name": "WILLS GROUP", 
+                "Customer_status": "Active", 
+                "Customer_type": "Normal"
+            }
+        ]
+    }
+}

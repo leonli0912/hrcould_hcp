@@ -1,0 +1,28 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" xmlns="sap.m">
+
+	<forms:SimpleForm id="SimpleFormDisplay480_12120"
+		minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout"
+		 labelSpanL="3" labelSpanM="3" emptySpanL="4"
+		emptySpanM="4" columnsL="1" columnsM="1">
+		<forms:content>
+			<core:Title text="Office" />
+			<Label text="Employee Id"></Label>
+			<Input value="{info1>Employee_id}" />
+			<Label text="Start Date" />
+			<Input value="{info1>Start_date}" />
+			<Label text="End Date" />
+			<Input value="{info1>End_date}" />
+			<Label text="Country" />
+			<Input value="{info1>Country}" />
+			<Label text="ZIP Code/City" />
+			<Input value="{ZIPCode} {City}" />
+			<core:Title text="Online" />
+			<Label text="Web" />
+			<Input value="{Url}" />
+
+		</forms:content>
+
+	</forms:SimpleForm>
+
+</mvc:View>

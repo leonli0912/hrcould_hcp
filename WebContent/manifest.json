@@ -1,0 +1,90 @@
+{
+    "sap.app": {
+        "ach": "CA-UI5-DOC"
+    }, 
+    "sap.ui5": {
+        "_version": "1.1.0", 
+        "rootView": "ui5TileTest.view.tile11", 
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        }, 
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router", 
+                "viewType": "XML", 
+                "viewPath": "ui5TileTrial.view", 
+                "controlId": "myApp", 
+                "controlAggregation": "pages", 
+                "transition": "slide"
+            }, 
+            "routes": [
+                {
+                    "pattern": "homepage", 
+                    "name": "appHome", 
+                    "target": "home"
+                }, 
+                {
+                    "pattern": "split", 
+                    "name": "split", 
+                    "target": "split"
+                }, 
+                {
+                    "pattern": "", 
+                    "name": "login", 
+                    "target": "login"
+                }, 
+                {
+                    "pattern": "person", 
+                    "name": "person", 
+                    "target": "person"
+                }, 
+                {
+                    "pattern": "stock", 
+                    "name": "stock", 
+                    "target": "stock"
+                },
+                {
+                    "pattern": "SplitApp", 
+                    "name": "splitapp", 
+                    "target": "splitapp"
+                },
+                {
+					"pattern": "Employee/{EmployeeId}",
+					"name": "employee",
+					"target": ["master", "detail"]
+				}
+            ], 
+            "targets": {
+                "home": {
+                    "viewName": "Tile", 
+                    "viewLevel": 1
+                }, 
+                "split": {
+                    "viewName": "SplitPage"
+                }, 
+                "login": {
+                    "viewName": "Login"
+                }, 
+                "person": {
+                    "viewName": "ObjectOviewPage"
+                }, 
+                "stock": {
+                    "viewName": "Stock"
+                },
+                "splitapp": {
+                    "viewName": "SplitApp"
+                },
+                "detail":{
+                	"viewName":"ObjectOviewPage"
+                },
+                "master":{
+                	"viewName":"EmployeeList"
+                }
+            }
+        }
+    }
+}

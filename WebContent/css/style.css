@@ -1,0 +1,42 @@
+.myLoginPage {
+  background-image:url('sun_light-wallpaper.jpg');
+  font-weight: bold;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 800px) {
+    .myLoginPage {background-image: url("sun_light-wallpaper_mobile.jpg"); }
+}
+
+/* .myLoginPage.sapMPage>section {
+    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center
+} */
+
+.login_box {
+    padding: 10% 37% 2rem 37%;
+    transition: padding 1s;
+}
+@media only screen and (max-width: 1200px) {
+    .login_box {
+        padding: 10% 27% 2rem 27%;
+        transition: padding 1s;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .login_box {
+        padding: 30% 10% 2rem 10%;
+        transition: padding 1s;
+    }
+}
+.loginButton{
+	padding-top:1em;
+}
+
+.sapMInputBase.zCompanyComboBox{
+	display: inherit;
+}

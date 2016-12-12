@@ -1,0 +1,94 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout" xmlns:m="sap.m" xmlns:forms="sap.ui.layout.form"
+	xmlns:cblock="ui5TileTrial.controller.controllerblocks" controllerName="ui5TileTrial.controller.ObjectOviewPage"
+	height="100%">
+	<ObjectPageLayout id="ObjectPageLayout"
+		enableLazyLoading="true" showTitleInHeaderContent="true" useIconTabBar="true"
+		showEditHeaderButton="true" editHeaderButtonPress="handleEditBtnPress"
+		useTwoColumnsForLargeScreen="true">
+		<headerTitle>
+			<ObjectPageHeader objectImageURI="./img/people/beautifulgirl.png"
+				objectTitle="Denise Smith" objectImageShape="Circle" objectImageAlt="Denise Smith"
+				objectSubtitle="Senior UI Developer" isObjectIconAlwaysVisible="false"
+				isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
+				<actions>
+					<ObjectPageHeaderActionButton id="id_edit" icon="sap-icon://edit"
+						text="Edit" importance="Medium" press="onEditPage"/>
+					<ObjectPageHeaderActionButton id="id_save" icon="sap-icon://save"
+						text="Save"  visible="false" press="onSavePage"/>
+					<ObjectPageHeaderActionButton id="id_undo" icon="sap-icon://undo"
+						text="undo"  visible="false" press="onUndo"/>
+				</actions>
+				<breadCrumbsLinks>
+					<m:Link text="Home" press="handleHomePress" />
+				</breadCrumbsLinks>
+			</ObjectPageHeader>
+		</headerTitle>
+
+		<headerContent>
+			<layout:VerticalLayout>
+				<m:Link text="+33 6 4512 5158" />
+				<m:Link text="DeniseSmith@sap.com" />
+			</layout:VerticalLayout>
+
+			<layout:HorizontalLayout>
+				<m:Image src=""></m:Image>
+				<m:Image src="./test-resources/sap/uxap/images/Twitter.png"></m:Image>
+			</layout:HorizontalLayout>
+
+			<layout:VerticalLayout>
+				<m:Label text="Hello! I am Tim and I use UxAP" />
+				<m:VBox height="63px">
+					<m:Label text="Achieved goals" />
+					<m:ProgressIndicator percentValue="30"
+						displayValue="30%" showValue="true" state="None" />
+				</m:VBox>
+			</layout:VerticalLayout>
+
+			<layout:VerticalLayout>
+				<m:Label text="San Jose, USA" />
+			</layout:VerticalLayout>
+		</headerContent>
+
+		<sections>
+			<ObjectPageSection title="Contact Info" importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="id_personalSection" title="">
+						<cblock:PersonalBlock id="personalblock"
+							columnLayout="3">
+							<cblock:mappings>
+								<ModelMapping externalModelName="Cont_Infos"
+									internalModelName="info1" externalPath="/" />
+							</cblock:mappings>
+						</cblock:PersonalBlock>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Empolyee Info"
+				importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="id_employeeSection" title="">
+						<cblock:JobBlock id="jobblock" columnLayout="2" />
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+			<ObjectPageSection title="Employment Info"
+				importance="Medium">
+				<subSections>
+					<ObjectPageSubSection id="id_employmentSection" title="">
+						<cblock:PayrollBlock id="payrollblock"
+							columnLayout="2">
+							<cblock:mappings>
+								<ModelMapping externalModelName="Employment_Infos"
+									internalModelName="info1" externalPath="/" />
+							</cblock:mappings>
+						</cblock:PayrollBlock>
+					</ObjectPageSubSection>
+				</subSections>
+			</ObjectPageSection>
+
+		</sections>
+	</ObjectPageLayout>
+</core:View>

@@ -1,0 +1,28 @@
+{
+    "d": {
+        "results": [
+            {
+                "Employee_id": "w0001", 
+                "End_date": "20171231", 
+                "Begin_date": "20160101", 
+                "Birth_country": "CN", 
+                "Birth_place": "Shanghai", 
+                "Birthday": "19880912",
+                "Email": "ly95487532@163.com",
+                "Ethnic": "",
+                "First_name": "Tang",
+                "Gender": "Female",
+                "Hire_date": "20160101",
+                "Id_number": "w0001",
+                "Id_type": "11",
+                "Language": "cn",
+                "Last_name": "Tom",
+                "Marital_begin": "20160101",
+                "Marital_status": "active",
+                "Nationality": "cn",
+                "Phone": "13795487532",
+                "Residence_type": "long"               
+            }
+        ]
+    }
+}

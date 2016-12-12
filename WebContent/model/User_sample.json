@@ -1,0 +1,14 @@
+{
+    "d": {
+        "results": [
+            {
+                "Auth": "admin", 
+                "Customer_id": "001", 
+                "Employee_id": "w0001", 
+                "Password": "", 
+                "Status": "", 
+                "User_id": "u0001"
+            }
+        ]
+    }
+}

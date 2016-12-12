@@ -1,0 +1,18 @@
+{
+    "d": {
+        "results": [
+            {
+                "Employee_id": "w0001", 
+                "End_date": "20171231", 
+                "Company": "wills", 
+                "Employee_group": "",
+                "Grade": "2",
+                "Hr_manager": "HR",
+                "Line_manager": "Manager",
+                "Position": "Developer",
+                "Position_category": "Dev",
+                "Start_date": "20160101"               
+            }
+        ]
+    }
+}
