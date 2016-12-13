@@ -15,7 +15,7 @@
 						title="{Customer_id}" 
 						description="{Customer_name}"
 						type="Navigation" 
-						icon="{ProductPicUrl}" 
+						icon="{picture}" 
 						iconDensityAware="false"
 						iconInset="false" 
 						press="onPressToDetail" />
