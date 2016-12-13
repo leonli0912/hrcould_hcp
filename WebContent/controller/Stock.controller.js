@@ -27,7 +27,7 @@ sap.ui.define([ 'jquery.sap.global', 'sap/m/MessageToast',
 				}
 			});*/
 			var masterModel = new sap.ui.model.json.JSONModel();
-			masterModel.loadData("./model/people.json");
+			masterModel.loadData("./model/people.json",false);
 			
 			var _setTableModel = function(oModel) {
 				that.getView().setModel(oModel);
