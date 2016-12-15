@@ -1,7 +1,8 @@
 sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast', 'sap/ui/core/Fragment', 'sap/ui/core/mvc/Controller'], function(jQuery, MessageToast, Fragment, Controller) {
     "use strict";
     var CController = Controller.extend("ui5TileTrial.controller.EmployeeList", {
-        SERVICE_URL: "http://120.27.144.171:8080/Odata/Cloud_Hr.svc/",
+        //SERVICE_URL: "http://120.27.144.171:8080/Odata/Cloud_Hr.svc/",
+        SERVICE_URL:"sfserver/User",
         onInit: function() {
             //this._createIframe();
             //this.getRouter().getRoute("PurchaseOrderDetails").attachPatternMatched(this.onPOMatched, this);

@@ -18,6 +18,13 @@
         "entryPath": "/test-resources"
       },
       "description": "SAPUI5 Test Resources"
+    },
+    {
+    	 "path": "/sfserver",
+    	 "target": {
+        	"type": "destination",
+        	"name": "apisalesdemo4"
+      }
     }
   ],
   "sendWelcomeFileRedirect": true
