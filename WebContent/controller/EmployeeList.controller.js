@@ -2,15 +2,15 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast', 'sap/ui/core/Fragment'
     "use strict";
     var CController = Controller.extend("ui5TileTrial.controller.EmployeeList", {
         //SERVICE_URL: "http://120.27.144.171:8080/Odata/Cloud_Hr.svc/",
-        SERVICE_URL:"sfserver/User",
+        SERVICE_URL:"https://sfserver/User",
         onInit: function() {
             //this._createIframe();
             //this.getRouter().getRoute("PurchaseOrderDetails").attachPatternMatched(this.onPOMatched, this);
             var that = this;
-            /*			$.ajax({
+            			$.ajax({
 				type : "GET",
 				dataType : 'json',
-				url : this.SERVICE_URL + "Customers?$format=json",
+				url : this.SERVICE_URL + "?$format=json",
 				contentType : "application/json",
 				success : function(json, that) {
 
@@ -22,16 +22,16 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast', 'sap/ui/core/Fragment'
 				error : function(e) {
 					console.log(e.message);
 				}
-			});*/
-            var masterModel = new sap.ui.model.json.JSONModel();
-            masterModel.loadData("./model/people.json",false);
+			});
+           /* var masterModel = new sap.ui.model.json.JSONModel();
+            masterModel.loadData("./model/people.json",false);*/
             
             var _setTableModel = function(oModel) {
                 that.getView().setModel(oModel);
                 var oTable = that.byId("id_EmployeeList");
                 oTable.setModel(oModel);
             };
-            _setTableModel(masterModel);
+            //_setTableModel(masterModel);
 
         },
         onPressHome: function() {
