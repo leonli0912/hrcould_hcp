@@ -9,9 +9,14 @@
 		</headerContent>
 		<content> -->
 		 	<List id="id_EmployeeList" items="{/}">
-				<StandardListItem title="{Customer_id}"
-					description="{Customer_name}" type="Navigation" icon="{ProductPicUrl}"
-					iconDensityAware="false" iconInset="false" press="onPressToDetail" />
+				<StandardListItem 
+				title="{title}"
+					description="{username}" 
+					type="Navigation" 
+					icon="{ProductPicUrl}"
+					iconDensityAware="false" 
+					iconInset="false" 
+					press="onPressToDetail" />
 			</List>
 <!-- 		</content>
 
