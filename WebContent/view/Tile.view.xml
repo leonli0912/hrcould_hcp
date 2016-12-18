@@ -53,6 +53,12 @@
 						activeIcon="" number="" numberUnit="" infoState="None" type="None"
 						iconDensityAware="true" press="onPressSplitList">
 					</StandardTile>
+					
+					<StandardTile xmlns="sap.m" id="idList" removable="true"
+						title="List" info="Review/submit a Change" icon="sap-icon://request"
+						activeIcon="" number="" numberUnit="" infoState="None" type="None"
+						iconDensityAware="true" press="onPressListTile">
+					</StandardTile>
 
 				</tiles>
 			</TileContainer>

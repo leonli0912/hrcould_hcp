@@ -12,6 +12,9 @@
 
 		<Label text="Job title" />
 		<Text text="Developer" />
+		
+	    <Label text="Assignment Class" />
+		<Text text="{assignmentClass}" />
 
 		<Label text="Local Job Title" />
 		<Label text="Ui Developer" />

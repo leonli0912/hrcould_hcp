@@ -10,9 +10,9 @@
 			<Label text="Employee Id"></Label>
 			<Text text="{info1>Employee_id}" />
 			<Label text="Start Date" />
-			<Text text="{info1>Start_date}" />
+			<Text text="{info1>startDate}" id="id_startDate" />
 			<Label text="End Date" />
-			<Text text="{info1>End_date}" />
+			<Text text="{info>Start_date}" />
 			<Label text="Country" />
 			<Text text="{info1>Country}" />
 			<Label text="ZIP Code/City" />

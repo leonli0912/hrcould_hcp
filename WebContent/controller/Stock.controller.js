@@ -43,9 +43,10 @@ sap.ui.define([ 'jquery.sap.global', 'sap/m/MessageToast',
 			oRouter.navTo("appHome");
 		},
 		onPressToDetail:function(oEvt){
-			var vEmployeeId = oEvt.getSource().getTitle();
+			var sToPageId = oEvt.getSource().getCustomData()[0].getValue();
+			//var vEmployeeId = oEvt.getSource().getTitle();
 			var oSplitPage = this.byId("SplitStock");
-			//oSplitPage.toDetail(this.createId(sToPageId));
+			oSplitPage.toDetail(this.createId("GeneralDetail"));
 		},
 		onPressAdd : function(oEvt) {
 			var that = this;

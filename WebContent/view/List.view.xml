@@ -1,0 +1,28 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="ui5TileTrial.controller.List"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns="sap.m">
+	<Page id="ListPage" title="Employees" icon="sap-icon://action"
+		showNavButton="true" navButtonPress="onPressHome" class="sapUiStdPage">
+		<headerContent>
+			<Button icon="sap-icon://add" press="onPressAdd">
+			</Button>
+		</headerContent>
+		<content>
+			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}"
+				refresh="onRefresh" />
+			<List id="id_empList" items="{/User}" busyIndicatorDelay="{ListView>/delay}"
+				updateFinished="onupdateFinished">
+				<StandardListItem 
+				title="{title}"
+					info="{userId}"
+					description="{username}" 
+					type="Navigation" 
+					icon="{ProductPicUrl}"
+					iconDensityAware="false" 
+					iconInset="false" 
+					press="onPressToDetail" /> 
+			</List>
+		</content>
+
+	</Page>
+</mvc:View>

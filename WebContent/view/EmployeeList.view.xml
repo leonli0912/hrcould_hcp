@@ -8,9 +8,10 @@
 			</Button>
 		</headerContent>
 		<content> -->
-		 	<List id="id_EmployeeList" items="{/}">
+		 	<List id="id_EmployeeList" items="{/}" enableBusyIndicator="true">
 				<StandardListItem 
 				title="{title}"
+					info="{userId}"
 					description="{username}" 
 					type="Navigation" 
 					icon="{ProductPicUrl}"

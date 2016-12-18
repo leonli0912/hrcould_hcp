@@ -57,8 +57,8 @@
 						<cblock:PersonalBlock id="personalblock"
 							columnLayout="3">
 							<cblock:mappings>
-								<ModelMapping externalModelName="Cont_Infos"
-									internalModelName="info1" externalPath="/" />
+								<ModelMapping externalModelName="Cont_info"
+								internalModelName="info1"	 externalPath="/" />
 							</cblock:mappings>
 						</cblock:PersonalBlock>
 					</ObjectPageSubSection>

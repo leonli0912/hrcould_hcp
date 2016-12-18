@@ -1,32 +1,36 @@
 <mvc:View controllerName="ui5TileTrial.controller.Stock" xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitStock" initialDetail="stockDetail"
 		initialMaster="stockMaster" orientationChange="onOrientationChange">
 		<masterPages>
 			<Page id="stockMaster" title="Employees" icon="sap-icon://action"
 				showNavButton="true" navButtonPress="onPressHome" class="sapUiStdPage">
 				<headerContent>
-				<Button icon="sap-icon://add" press="onPressAdd">
-				</Button>
+					<Button icon="sap-icon://add" press="onPressAdd">
+					</Button>
 				</headerContent>
 				<content>
 					<List id="id_stockList" items="{/}">
-						<StandardListItem 
-						title="{Customer_id}" 
-						description="{Customer_name}"
-						type="Navigation" 
-						icon="{picture}" 
-						iconDensityAware="false"
-						iconInset="false" 
-						press="onPressToDetail" />
+						<StandardListItem title="{Customer_id}"
+							description="{Customer_name}" type="Navigation" icon="{picture}"
+							iconDensityAware="false" iconInset="false" press="onPressToDetail"
+							custom:to="{Customer_id}" />
 					</List>
 				</content>
 
 			</Page>
 		</masterPages>
 		<detailPages>
+
+			<Page id="GeneralDetail" title="Employee Detail" class="sapUiStdPage">
+				<content>
+					<Label text="Detail page 1" />
+					<Button text="Go to Detail page2" press="onPressNavToDetail" />
+				</content>
+			</Page>
 			<Page id="stockDetail" title="Employee Detail" class="sapUiStdPage">
-				
+	
 			</Page>
 		</detailPages>
 	</SplitApp>

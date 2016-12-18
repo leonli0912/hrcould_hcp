@@ -1,5 +1,4 @@
- {
-        "results": [
+ 
             {
                 "Employee_id": "w0001", 
                 "End_date": "20171231", 
@@ -14,5 +13,4 @@
                 "Publish_place": "",
                 "Start_date": "20160101"
             }
-        ]
-    }
+ 

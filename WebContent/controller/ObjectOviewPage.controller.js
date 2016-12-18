@@ -3,11 +3,12 @@ sap.ui.controller("ui5TileTrial.controller.ObjectOviewPage", {
     _formFragments: {},
     onInit: function() {
         // init model
-        this._initModel("Cont_Infos");
+        /*      this._initModel("Cont_Infos");
         this._initModel("Employee_Infos");
-        this._initModel("Employment_Infos");
+        this._initModel("Employment_Infos");*/
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
         oRouter.getRoute("employee").attachPatternMatched(this._onObjectMatched, this);
+        this._initModel("empInfo","admin");
     },
     handleHomePress: function(oEvt) {
         var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
@@ -25,43 +26,52 @@ sap.ui.controller("ui5TileTrial.controller.ObjectOviewPage", {
     },
     _onObjectMatched: function(oEvent) {
         var sObjectId = oEvent.getParameter("arguments").EmployeeId;
+        this._initModel("empInfo", sObjectId);
+        /*if(!this.getModel()){
+        	this.setModel()
+        }
         this.getModel().metadataLoaded().then(function() {
             var sObjectPath = this.getModel().createKey("Employee_id", {
                 ObjectID: sObjectId
             });
             this._bindView("/" + sObjectPath);
         }
-        .bind(this));
+        .bind(this));*/
     },
-    _initModel: function(oEntitySet) {
+    _initModel: function(oEntitySet, employee_id) {
         var that = this;
-        var employee_id = "w0001";
+        //var employee_id = "w0001";
         var filter = "?$filter=Employee_id eq '" + employee_id + "'";
+        var entity = "User('" + employee_id + "')/";
+        //User('admin')/empInfo?$format=json
         /* 
 						 * odata model
 						 */
-        /*
-						OData.read({
-							//url:http://120.27.144.171:8080/Odata/Cloud_Hr.svc/Cont_Infos?$filter=Employee_id%20eq%20%27w0001%27&$format=json
-							requestUri : this.SERVICE_URL + oEntitySet + filter,
-							headers : {
-								Accept : "application/json"
-							}
-						}, function(data, response) {
-
-							var oJsonModel = new sap.ui.model.json.JSONModel();
-							oJsonModel.setData(data.results[0]);
-							_setTableModel(oJsonModel, that);
-						}, function(err) {
-							alert("Error occurred " + err.message);
-						});
-						*/
-        /*
-						   * json model
-						   * */
-        var oJsonModel = new sap.ui.model.json.JSONModel();
+        
+/*        OData.read({
+            //url:http://120.27.144.171:8080/Odata/Cloud_Hr.svc/Cont_Infos?$filter=Employee_id%20eq%20%27w0001%27&$format=json
+            //requestUri : this.SERVICE_URL + oEntitySet + filter,
+            requestUri: "/sfserver/" + entity + oEntitySet,
+            headers: {
+                Accept: "application/json"
+            }
+        }, function(data, response) {
+            
+            var oJsonModel = new sap.ui.model.json.JSONModel();
+            oJsonModel.setData(data);
+            _setTableModel(oJsonModel, "Cont_info");
+        }, function(err) {
+            alert("Error occurred " + err.message);
+        });*/
+        
+        var oDataModel = new sap.ui.model.odata.ODataModel("/sfserver/User");
+        this.getView().setModel(oDataModel,"Cont_info");
+             
+						   /* json model
+						   */
+ /*       var oJsonModel = new sap.ui.model.json.JSONModel();
         oJsonModel.loadData("model/Cont_Info_sample.json", "", false);
-        this.getView().setModel(oJsonModel, "Cont_info");
+        this.getView().setModel(oJsonModel, "Cont_info");*/
         var _setTableModel = function(oModel) {
             that.getView().setModel(oModel, oEntitySet);
         }

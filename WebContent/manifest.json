@@ -1,6 +1,16 @@
 {
     "sap.app": {
-        "ach": "CA-UI5-DOC"
+        "ach": "CA-UI5-DOC",
+        "dataSources": {
+			"mainService": {
+				"uri": "/sfserver",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri" : "localService/metadata.xml"
+				}
+			}
+		}
     }, 
     "sap.ui5": {
         "_version": "1.1.0", 
@@ -55,7 +65,12 @@
                 {
 					"pattern": "Employee/{EmployeeId}",
 					"name": "employee",
-					"target": ["master", "detail"]
+					"target": ["master", "employee"]
+				},
+				{
+					"pattern": "List", 
+                    "name": "listView", 
+                    "target": "listView"
 				}
             ], 
             "targets": {
@@ -65,6 +80,7 @@
                 }, 
                 "split": {
                     "viewName": "SplitPage"
+                    
                 }, 
                 "login": {
                     "viewName": "Login"
@@ -76,13 +92,21 @@
                     "viewName": "Stock"
                 },
                 "splitapp": {
-                    "viewName": "SplitApp"
+                    "viewName": "SplitApp",
+                    "viewLevel": 1
+                 
                 },
-                "detail":{
-                	"viewName":"ObjectOviewPage"
+                "listView":{
+                	"viewName": "List"
                 },
+                "employee":{
+                	"viewName":"ObjectOviewPage",
+                	"viewLevel": 2
+                },             
                 "master":{
-                	"viewName":"EmployeeList"
+                	"viewName":"EmployeeList",
+                	"viewLevel": 1,
+                	"controlAggregation": "pages"
                 }
             }
         }

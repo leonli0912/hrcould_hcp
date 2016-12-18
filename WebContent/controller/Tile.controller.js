@@ -78,7 +78,10 @@ sap.ui.controller("ui5TileTrial.controller.Tile", {
 		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 		oRouter.navTo("splitapp");
 	},
-	
+	onPressListTile:function(evt){
+		var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+		oRouter.navTo("listView");
+	},
 	
 	_onPatternMatched : function() {
 
