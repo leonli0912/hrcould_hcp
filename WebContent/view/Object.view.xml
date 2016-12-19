@@ -1,91 +1,88 @@
-<mvc:View
-	controllerName="ui5TileTrial.controller.Object"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:semantic="sap.m.semantic"
-	xmlns:form="sap.ui.layout.form"
+<mvc:View controllerName="ui5TileTrial.controller.Object"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:form="sap.ui.layout.form"
 	xmlns="sap.m">
-	<semantic:FullscreenPage
-		id="page"
-		busy="{objectView>/busy}"
-		busyIndicatorDelay="{objectView>/delay}"
-		navButtonPress="onNavBack"
-		showNavButton="true"
-		title="{i18n>objectTitle}">
+	<semantic:FullscreenPage id="page"
+		busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}"
+		navButtonPress="onNavBack" showNavButton="true" title="{i18n>objectTitle}">
 		<semantic:content>
-			<ObjectHeader
-				id="objectHeader"
-				responsive="true"
-				title="{title}"
-				numberUnit="PC"
-				numberState="{
-					path: 'UnitsInStock',
-					formatter: '.formatter.quantityState'
-				}"
-				number="{UnitsInStock}">
+			<ObjectHeader id="objectHeader" responsive="true" title="{lastName}"
+				icon="./img/people/beautifulgirl.png">
 				<attributes>
-					<ObjectAttribute
-						title="{i18n>ObjectProductIdText}"
-						text="{
-							path: 'ProductID'
-						}"/>
-					<ObjectAttribute
-						title="{i18n>ObjectPriceTitle}"
-						text="{
-							path: 'UnitPrice',
-							formatter: '.formatter.numberUnit'
-						} EUR"/>
-
+					<ObjectAttribute title="{Job Code}" text="{jobCode}" />
+					<ObjectAttribute title="{i18n>ObjectProductIdText}"
+						text="{email}" active="true" />
 				</attributes>
 				<statuses>
-					<ObjectStatus
-						text="{i18n>ObjectDiscontinuedStatusText}"
-						state="Error"
-						visible="{path:'Discontinued'}"/>
-					<ProgressIndicator
-						percentValue="{UnitsInStock}"
-						displayValue="{UnitsInStock}"
-						showValue="true"
-						state="{
-							path: 'UnitsInStock',
-							formatter: '.formatter.quantityState'}" />
+					<ObjectStatus text="{matrix1Label}" state="Error" />
 				</statuses>
 			</ObjectHeader>
-			<Panel
-				class="sapUiNoContentPadding"
-				headerText="{i18n>ObjectSupplierTabTitle}">
-    			<content>
-    				<form:SimpleForm
-						minWidth="1024"
-						maxContainerCols="2"
-						editable="false"
-						layout="ResponsiveGridLayout"
-						labelSpanL="3"
-						labelSpanM="3"
-						emptySpanL="4"
-						emptySpanM="4"
-						columnsL="1"
-						columnsM="1">
+
+			<Panel class="sapUiNoContentPadding" headerText="{i18n>ObjectSupplierTabTitle}">
+				<content>
+					<!-- <form:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" 
+						layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" 
+						emptySpanM="4" columnsL="1" columnsM="1"> -->
+					<form:SimpleForm id="SimpleFormDisplay480_12120"
+						minWidth="1024" maxContainerCols="2" editable="false"
+						layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3"
+						emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
 						<form:content>
-							<Label text="{i18n>ObjectSupplierName}"/>
-							<Text text="{Supplier/CompanyName}"/>
-							<Label text="{i18n>ObjectSupplierAddress}"/>
-							<Text text="{Supplier/Address}"/>
-							<Label text="{i18n>ObjectSupplierZipcode} / {i18n>ObjectSupplierCity}"/>
-							<Text text="{Supplier/PostalCode} / {Supplier/City}"/>
-							<Label text="{i18n>ObjectSupplierCountry}"/>
-							<Text text="{Supplier/Country}"/>
+							<Label text="Employee Id"></Label>
+							<Text text="{userId}" />
+
+							<Label text="Name"></Label>
+							<Text text="{lastName}" />
+
+							<Label text="Gender"></Label>
+							<Text text="{gender}" />
+							<Label text="Hire Date" />
+							<Text text="{hireDate}" id="id_startDate" />
+
+							<Label text="Country" />
+							<Text text="{Country}" />
+
+							<Label text="Married" />
+							<Text text="{married}" />
+							<Label text="Email" />
+							<Text text="{email}" />
+							<Label text="ZIP Code/City" />
+							<Text text="{ZIPCode} {City}" />
+
+							<Label text="jobCode" />
+							<Text text="{jobCode}" />
+							<Label text="Job classification" />
+
+							<Text text="Senior Ui Developer (UIDEV-SR)" />
+
+							<Label text="Pay Grade" />
+							<Text text="Salary Grade 18 (GR-14)" />
+
+							<Label text="Job title" />
+							<Text text="Developer" />
+
+							<Label text="Assignment Class" />
+							<Text text="{assignmentClass}" />
+
+							<Label text="Local Job Title" />
+							<Label text="Ui Developer" />
+
+							<Label text="Employee Class" />
+							<Text text="Employee" />
+
+							<Label text="FTE" />
+							<Text text="1" />
+
+							<Label text="Standard Weekly Hours" />
+							<Text text="40" />
+
 						</form:content>
 					</form:SimpleForm>
-    			</content>
+				</content>
 			</Panel>
-			<Panel
-				class="sapUiContentPadding"
-				headerText="{i18n>ObjectCommentsTabTitle}">
+			<Panel class="sapUiContentPadding" headerText="{i18n>ObjectCommentsTabTitle}">
 				<content>
-					<FeedInput post="onPost"/>
-					<List
-						id="idCommentsList"
-						noDataText="{i18n>ObjectCommentNoData}"
+					<FeedInput post="onPost" />
+					<List id="idCommentsList" noDataText="{i18n>ObjectCommentNoData}"
 						showSeparators="Inner"
 						items="{
 							path: 'productFeedback>/productComments',
@@ -94,18 +91,15 @@
 							    descending: true
 							}
 						}">
-						<FeedListItem
-							info="{productFeedback>type}"
-							text="{productFeedback>comment}"
-							timestamp="{productFeedback>date}"/>
+						<FeedListItem info="{productFeedback>type}" text="{productFeedback>comment}"
+							timestamp="{productFeedback>date}" />
 					</List>
 				</content>
 			</Panel>
 		</semantic:content>
 		<semantic:sendEmailAction>
-			<semantic:SendEmailAction
-				id="shareEmail"
-				press="onShareEmailPress"/>
+			<semantic:SendEmailAction id="shareEmail"
+				press="onShareEmailPress" />
 		</semantic:sendEmailAction>
 	</semantic:FullscreenPage>
 </mvc:View>

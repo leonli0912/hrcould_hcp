@@ -3,8 +3,9 @@
 	xmlns:cblock="ui5TileTrial.controller.controllerblocks" controllerName="ui5TileTrial.controller.ObjectOviewPage"
 	height="100%">
 	<ObjectPageLayout id="ObjectPageLayout"
-		enableLazyLoading="true" showTitleInHeaderContent="true" useIconTabBar="true"
-		showEditHeaderButton="true" editHeaderButtonPress="handleEditBtnPress"
+		enableLazyLoading="true" showTitleInHeaderContent="true"
+		useIconTabBar="true" showEditHeaderButton="true"
+		editHeaderButtonPress="handleEditBtnPress"
 		useTwoColumnsForLargeScreen="true">
 		<headerTitle>
 			<ObjectPageHeader objectImageURI="./img/people/beautifulgirl.png"
@@ -12,12 +13,12 @@
 				objectSubtitle="Senior UI Developer" isObjectIconAlwaysVisible="false"
 				isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
 				<actions>
-					<ObjectPageHeaderActionButton id="id_edit" icon="sap-icon://edit"
-						text="Edit" importance="Medium" press="onEditPage"/>
-					<ObjectPageHeaderActionButton id="id_save" icon="sap-icon://save"
-						text="Save"  visible="false" press="onSavePage"/>
-					<ObjectPageHeaderActionButton id="id_undo" icon="sap-icon://undo"
-						text="undo"  visible="false" press="onUndo"/>
+					<ObjectPageHeaderActionButton id="id_edit"
+						icon="sap-icon://edit" text="Edit" importance="Medium" press="onEditPage" />
+					<ObjectPageHeaderActionButton id="id_save"
+						icon="sap-icon://save" text="Save" visible="false" press="onSavePage" />
+					<ObjectPageHeaderActionButton id="id_undo"
+						icon="sap-icon://undo" text="undo" visible="false" press="onUndo" />
 				</actions>
 				<breadCrumbsLinks>
 					<m:Link text="Home" press="handleHomePress" />
@@ -53,12 +54,13 @@
 		<sections>
 			<ObjectPageSection title="Contact Info" importance="Medium">
 				<subSections>
-					<ObjectPageSubSection id="id_personalSection" title="">
+					<ObjectPageSubSection id="id_personalSection"
+						title="">
 						<cblock:PersonalBlock id="personalblock"
 							columnLayout="3">
 							<cblock:mappings>
 								<ModelMapping externalModelName=""
-								internalModelName="info1"	 externalPath="/" />
+									internalModelName="info1" externalPath="/" />
 							</cblock:mappings>
 						</cblock:PersonalBlock>
 					</ObjectPageSubSection>
@@ -68,8 +70,22 @@
 			<ObjectPageSection title="Empolyee Info"
 				importance="Medium">
 				<subSections>
-					<ObjectPageSubSection id="id_employeeSection" title="">
-						<cblock:JobBlock id="jobblock" columnLayout="2" />
+					<ObjectPageSubSection id="id_employeeSection"
+						title="">
+						<!-- <cblock:JobBlock id="jobblock" columnLayout="2" /> -->
+						
+
+							<m:Label text="Job classification" />
+							<m:Text text="Senior Ui Developer (UIDEV-SR)" />
+
+							<!-- <Label text="Pay Grade" /> <Text text="Salary Grade 18 (GR-14)" 
+								/> <Label text="Job title" /> <Text text="Developer" /> <Label text="Assignment 
+								Class" /> <Text text="{assignmentClass}" /> <Label text="Local Job Title" 
+								/> <Label text="Ui Developer" /> <core:Title text="Rating" /> <Label text="Employee 
+								Class" /> <Text text="Employee" /> <Label text="FTE" /> <Text text="1" /> 
+								<Label text="Standard Weekly Hours" /> <Text text="40" /> -->
+
+						
 					</ObjectPageSubSection>
 				</subSections>
 			</ObjectPageSection>
@@ -77,7 +93,8 @@
 			<ObjectPageSection title="Employment Info"
 				importance="Medium">
 				<subSections>
-					<ObjectPageSubSection id="id_employmentSection" title="">
+					<ObjectPageSubSection id="id_employmentSection"
+						title="">
 						<cblock:PayrollBlock id="payrollblock"
 							columnLayout="2">
 							<cblock:mappings>

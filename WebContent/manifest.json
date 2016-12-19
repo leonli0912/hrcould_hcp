@@ -105,7 +105,7 @@
                 	"viewName": "List"
                 },
                 "object":{
-                	"viewName": "ObjectOviewPage",
+                	"viewName": "Object",
                 	"viewLevel": 2
                 },
                 "employee":{
