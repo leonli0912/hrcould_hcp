@@ -8,18 +8,23 @@
 		<forms:content>
 			<core:Title text="Office" />
 			<Label text="Employee Id"></Label>
-			<Text text="{info1>Employee_id}" />
+			<Text text="{userId}" />
+	
+			<Label text="Name"></Label>
+			<Text text="{lastName}" />
 			<Label text="Start Date" />
-			<Text text="{info1>startDate}" id="id_startDate" />
+			<Text text="{startDate}" id="id_startDate" />
 			<Label text="End Date" />
 			<Text text="{info>Start_date}" />
 			<Label text="Country" />
-			<Text text="{info1>Country}" />
+			<Text text="{Country}" />
+			<Label text="Email" />
+			<Text text="{email}" />
 			<Label text="ZIP Code/City" />
 			<Text text="{ZIPCode} {City}" />
 			<core:Title text="Online" />
-			<Label text="Web" />
-			<Text text="{Url}" />
+			<Label text="jobCode" />
+			<Text text="{jobCode}" />
 
 		</forms:content>
 

@@ -5,8 +5,9 @@ sap.ui.define([ 'jquery.sap.global', 'sap/m/MessageToast',
 
 	var CController = Controller.extend("ui5TileTrial.controller.List", {
 		SERVICE_URL: "/sfserver/User",
+		oRouter:null,
 		onInit:function(){
-			
+			this.oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			var oDataModel = new sap.ui.model.odata.ODataModel("/sfserver");
 			this.getView().setModel(oDataModel);
 			
@@ -38,9 +39,15 @@ sap.ui.define([ 'jquery.sap.global', 'sap/m/MessageToast',
 			this.byId("pullToRefresh").hide();
 		},
         onPressHome: function() {
-            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRouter.navTo("appHome");
+            
+            this.oRouter.navTo("appHome");
         },
+        onPressToSecondPage:function(oEvent){
+    		this.oRouter.navTo("object", {
+				objectId: oEvent.getSource().getBindingContext().getProperty("userId")
+			});        	
+        },
+
 		/* =========================================================== */
 		/* begin: internal methods                                     */
 		/* =========================================================== */

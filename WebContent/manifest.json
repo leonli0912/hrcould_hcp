@@ -71,6 +71,11 @@
 					"pattern": "List", 
                     "name": "listView", 
                     "target": "listView"
+				},
+				{
+					"pattern": "List/{objectId}",
+					"name": "object",
+					"target": "object"
 				}
             ], 
             "targets": {
@@ -98,6 +103,10 @@
                 },
                 "listView":{
                 	"viewName": "List"
+                },
+                "object":{
+                	"viewName": "ObjectOviewPage",
+                	"viewLevel": 2
                 },
                 "employee":{
                 	"viewName":"ObjectOviewPage",

@@ -11,7 +11,7 @@
 			<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}"
 				refresh="onRefresh" />
 			<List id="id_empList" items="{/User}" busyIndicatorDelay="{ListView>/delay}"
-				updateFinished="onupdateFinished">
+				updateFinished="onupdateFinished" >
 				<StandardListItem 
 				title="{title}"
 					info="{userId}"
@@ -20,7 +20,7 @@
 					icon="{ProductPicUrl}"
 					iconDensityAware="false" 
 					iconInset="false" 
-					press="onPressToDetail" /> 
+					press="onPressToSecondPage" /> 
 			</List>
 		</content>
 
