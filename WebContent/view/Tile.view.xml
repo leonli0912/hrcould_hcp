@@ -55,8 +55,8 @@
 					</StandardTile>-->
 					
 					<StandardTile xmlns="sap.m" id="idList" removable="true"
-						title="Employees List" info="Review/submit a Change" icon="sap-icon://group"
-						activeIcon="" number="" numberUnit="" infoState="None" type="None"
+						title="Employees List" info="Check Employees' info" icon="sap-icon://group"
+						activeIcon="" number="479" numberUnit="" infoState="None" type="None"
 						iconDensityAware="true" press="onPressListTile">
 					</StandardTile>
 

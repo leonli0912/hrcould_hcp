@@ -54,7 +54,7 @@
 			</Panel>
 			<Panel class="sapUiContentPadding" headerText="{Comments}">
 				<content>
-					<FeedInput post="onPost" placeholder="Add your comments here..."/>
+					<FeedInput icon="sap-icon://notes" post="onPost" placeholder="Add your comments here..."/>
 					<!--<List id="idCommentsList" noDataText="{i18n>ObjectCommentNoData}"
 						showSeparators="Inner"
 						items="{custom01}">
