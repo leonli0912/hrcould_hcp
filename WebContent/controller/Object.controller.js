@@ -52,8 +52,34 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast',
 		_bindView: function(sObjectPath) {
 			var oViewModel = this.getView().getModel("objectView"),
 				oDataModel = this.getView().getModel();
-
-			this.getView().bindElement({
+			var oHeader = this.byId("idobjectHeader");
+			var strHeaderPath = "/Photo?$filter=userId eq '"+ this.objectId + "')";
+			oHeader.bindElement({
+				path:strHeaderPath,
+				events: {
+					//change: this._onBindingChange.bind(this),
+					dataRequested: function() {
+						oDataModel.attachMetadataLoaded(function() {
+							
+							// Busy indicator on view should only be set if metadata is loaded,
+							// otherwise there may be two busy indications next to each other on the
+							// screen. This happens because route matched handler already calls '_bindView'
+							// while metadata is loaded.
+							
+						});
+					},
+					dataReceived: function(data) {
+					//data:image/png;base64,
+					var oPhoto = data.getParameters();
+					var strIcon = "data:"+ oPhoto.data.mimeType + ";base64,"+oPhoto.data.photo;
+					oHeader.setIcon(strIcon);
+					}
+				}
+			});
+			
+			
+			var oForm = this.byId("SimpleFormDisplay");
+			oForm.bindElement({
 				path: sObjectPath,
 				events: {
 					//change: this._onBindingChange.bind(this),
@@ -66,7 +92,12 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast',
 							oViewModel.setProperty("/busy", true);
 						});
 					},
-					dataReceived: function() {
+					dataReceived: function(data) {
+					//	oHeader.setTitle(data.getParameters().data.lastName);                         )
+						oHeader.setTitle(data.getParameters().data.lastName);
+						var aAttri = oHeader.getAttributes();
+						aAttri[0].text=data.getParameters().data.jobCode;
+						aAttri[1].text=data.getParameters().data.email;
 						oViewModel.setProperty("/busy", false);
 					}
 				}
