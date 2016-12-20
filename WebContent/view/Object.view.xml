@@ -8,11 +8,11 @@
 					<ObjectAttribute title="{Job Code}" text="{jobCode}"/>
 					<ObjectAttribute title="{i18n>ObjectProductIdText}" text="{email}" active="true"/>
 				</attributes>
-				<statuses>
+			<!--	<statuses>
 					<ObjectStatus text="{matrix1Label}" state="Error"/>
-				</statuses>
+				</statuses>-->
 			</ObjectHeader>
-			<Panel class="sapUiNoContentPadding" headerText="{i18n>ObjectSupplierTabTitle}">
+			<Panel class="sapUiNoContentPadding" headerText="{Employee Info}">
 				<content>
 					<!-- <form:SimpleForm minWidth="1024" maxContainerCols="2" editable="false" 
 						layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" 
@@ -52,9 +52,9 @@
 					</form:SimpleForm>
 				</content>
 			</Panel>
-			<Panel class="sapUiContentPadding" headerText="{i18n>ObjectCommentsTabTitle}">
+			<Panel class="sapUiContentPadding" headerText="{Comments}">
 				<content>
-					<FeedInput post="onPost"/>
+					<FeedInput post="onPost" placeholder="Add your comments here..."/>
 					<!--<List id="idCommentsList" noDataText="{i18n>ObjectCommentNoData}"
 						showSeparators="Inner"
 						items="{custom01}">

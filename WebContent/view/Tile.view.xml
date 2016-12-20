@@ -36,26 +36,26 @@
 						iconDensityAware="true" press="onShowSplitScreen">
 
 					</StandardTile>-->
-					<StandardTile xmlns="sap.m" id="ida2" removable="true"
+				<!--	<StandardTile xmlns="sap.m" id="ida2" removable="true"
 						title="My Employees" info="Create/Edit/Review the project" icon="sap-icon://work-history"
 						activeIcon="" number="" numberUnit="" infoState="None" type="None"
 						iconDensityAware="true" press="onPressStock">
-					</StandardTile> 
+					</StandardTile> -->
 					
 					<StandardTile xmlns="sap.m" id="ida" removable="true"
-						title="Own Data" info="Review/submit a Change" icon="sap-icon://request"
+						title="Own Data" info="Review/submit a Change" icon="sap-icon://business-card"
 						activeIcon="" number="" numberUnit="" infoState="None" type="None"
 						iconDensityAware="true" press="onPressPersonal">
 					</StandardTile>
 					
-					<StandardTile xmlns="sap.m" id="iEmpList" removable="true"
+					<!--<StandardTile xmlns="sap.m" id="iEmpList" removable="true"
 						title="Emp List" info="Review/submit a Change" icon="sap-icon://request"
 						activeIcon="" number="" numberUnit="" infoState="None" type="None"
 						iconDensityAware="true" press="onPressSplitList">
-					</StandardTile>
+					</StandardTile>-->
 					
 					<StandardTile xmlns="sap.m" id="idList" removable="true"
-						title="List" info="Review/submit a Change" icon="sap-icon://request"
+						title="Employees List" info="Review/submit a Change" icon="sap-icon://group"
 						activeIcon="" number="" numberUnit="" infoState="None" type="None"
 						iconDensityAware="true" press="onPressListTile">
 					</StandardTile>

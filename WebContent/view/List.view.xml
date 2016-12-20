@@ -13,9 +13,9 @@
 			<List id="id_empList" items="{/User}" busyIndicatorDelay="{ListView>/delay}"
 				updateFinished="onupdateFinished" >
 				<StandardListItem 
-				title="{title}"
-					info="{userId}"
-					description="{username}" 
+				title="{defaultFullName}"
+					
+					description="{title}" 
 					type="Navigation" 
 					icon="{ProductPicUrl}"
 					iconDensityAware="false" 
