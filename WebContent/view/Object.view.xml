@@ -3,7 +3,7 @@
 	<semantic:FullscreenPage id="page" busy="{objectView>/busy}" busyIndicatorDelay="{objectView>/delay}" navButtonPress="onNavBack"
 		showNavButton="true" title="{i18n>objectTitle}">
 		<semantic:content>
-			<ObjectHeader id="idobjectHeader" responsive="true" title="{lastName}" >
+			<ObjectHeader id="idobjectHeader" responsive="true" title="{defaultFullName}" >
 				<attributes>
 					<ObjectAttribute id="idheaderAttri1" title="{Job Code}" text="{jobCode}"/>
 					<ObjectAttribute id="idheaderAttri2" title="{i18n>ObjectProductIdText}" text="{email}" active="true"/>
@@ -23,7 +23,7 @@
 							<Label text="Employee Id"></Label>
 							<Text text="{userId}"/>
 							<Label text="Name"></Label>
-							<Text text="{lastName}"/>
+							<Text text="{defaultFullName}"/>
 							<Label text="Gender"></Label>
 							<Text text="{gender}"/>
 							<Label text="Hire Date"/>

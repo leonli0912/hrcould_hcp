@@ -52,6 +52,8 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast',
 		_bindView: function(sObjectPath) {
 			var oViewModel = this.getView().getModel("objectView"),
 				oDataModel = this.getView().getModel();
+				oViewModel.setProperty("/busy", true);
+				
 			var oHeader = this.byId("idobjectHeader");
 			var oAttribute1 = this.byId("idheaderAttri1");
 			var oAttribute2 = this.byId("idheaderAttri2");
@@ -111,7 +113,7 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast',
 					},
 					dataReceived: function(data) {
 						//	oHeader.setTitle(data.getParameters().data.lastName);                         )
-						oHeader.setTitle(data.getParameters().data.lastName);
+						oHeader.setTitle(data.getParameters().data.defaultFullName);
 						//var aAttri = oHeader.getAttributes();
 						oAttribute1.setText(data.getParameters().data.jobCode) ;
 						oAttribute2.setText(data.getParameters().data.email) ;
