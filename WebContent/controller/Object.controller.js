@@ -85,13 +85,13 @@ sap.ui.define(['jquery.sap.global', 'sap/m/MessageToast',
 					},
 					dataReceived: function(data) {
 						//data:image/png;base64,
-						var oPhoto = data.getParameters();
+					/*	var oPhoto = data.getParameters();
 						if (oPhoto.data) {
 							var strIcon = "data:" + oPhoto.data.mimeType + ";base64," + oPhoto.data.photo;
 							oHeader.setIcon(strIcon);
 						}else{
 							oHeader.setIcon("./img/people/beautifulgirl.png");
-						}
+						}*/
 
 					}
 				}
